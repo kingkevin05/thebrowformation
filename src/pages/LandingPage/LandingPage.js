@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import landingPic from '../../assets/images/landingPic.png'
 
 const LandingPage = () => {
   return (
@@ -16,10 +17,18 @@ const LandingPage = () => {
         flexDirection: 'column',
       }}
     >
-      <h2>Cool Landing Page</h2>
+      <img
+            src={landingPic}
+            
+            // style={{ width: "50%" }}
+            alt="cover"
+          />
+      
 
       <div>
-        <Link to="/home">Home</Link>
+        <Link to="/home">
+        <h2>welcome</h2>
+        </Link>
       </div>
     </div>
   )
