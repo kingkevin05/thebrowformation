@@ -105,7 +105,7 @@ const getMenuItems = props => {
       visible: isAuthorised,
       primaryText: intl.formatMessage({
         id: "tabs_demo",
-        defaultMessage: "Tabs Page",
+        defaultMessage: "Get Started",
       }),
       leftIcon: <Tab />,
     },
