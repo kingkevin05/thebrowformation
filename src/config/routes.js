@@ -1,24 +1,27 @@
 /* eslint-disable react/jsx-key */
-import React, { lazy } from 'react'
-import AuthorizedRoute from 'base-shell/lib/components/AuthorizedRoute'
-import UnauthorizedRoute from 'base-shell/lib/components/UnauthorizedRoute'
+import React, { lazy } from "react";
+import AuthorizedRoute from "base-shell/lib/components/AuthorizedRoute";
+import UnauthorizedRoute from "base-shell/lib/components/UnauthorizedRoute";
+import LandingPage from "pages/LandingPage";
 
-const SignIn = lazy(() => import('../pages/SignIn/SignIn'))
+const SignIn = lazy(() => import("../pages/SignIn/SignIn"));
 
-const SignUp = lazy(() => import('../pages/SignUp/SignUp'))
-const PasswordReset = lazy(() => import('../pages/PasswordReset/PasswordReset'))
-const About = lazy(() => import('../pages/About'))
-const Home = lazy(() => import('../pages/Home/Home'))
-const DialogDemo = lazy(() => import('../pages/DialogDemo/DialogDemo'))
-const ToastDemo = lazy(() => import('../pages/ToastDemo/ToastDemo'))
-const FilterDemo = lazy(() => import('../pages/FilterDemo'))
-const ListPageDemo = lazy(() => import('../pages/ListPageDemo'))
-const TabsDemo = lazy(() => import('../pages/TabsDemo'))
-const MyAccount = lazy(() => import('../pages/MyAccount/MyAccount'))
+const SignUp = lazy(() => import("../pages/SignUp/SignUp"));
+const PasswordReset = lazy(() =>
+  import("../pages/PasswordReset/PasswordReset")
+);
+const About = lazy(() => import("../pages/About"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const DialogDemo = lazy(() => import("../pages/DialogDemo/DialogDemo"));
+const ToastDemo = lazy(() => import("../pages/ToastDemo/ToastDemo"));
+const FilterDemo = lazy(() => import("../pages/FilterDemo"));
+const ListPageDemo = lazy(() => import("../pages/ListPageDemo"));
+const TabsDemo = lazy(() => import("../pages/TabsDemo"));
+const MyAccount = lazy(() => import("../pages/MyAccount/MyAccount"));
 
 const routes = [
   {
-    path: '/signin',
+    path: "/signin",
     exact: true,
     element: (
       <UnauthorizedRoute>
@@ -27,7 +30,7 @@ const routes = [
     ),
   },
   {
-    path: '/signup',
+    path: "/signup",
     exact: true,
     element: (
       <UnauthorizedRoute>
@@ -36,7 +39,7 @@ const routes = [
     ),
   },
   {
-    path: '/password_reset',
+    path: "/password_reset",
     exact: true,
     element: (
       <UnauthorizedRoute>
@@ -45,12 +48,12 @@ const routes = [
     ),
   },
   {
-    path: '/about',
+    path: "/about",
     exact: true,
     element: <About />,
   },
   {
-    path: '/my_account',
+    path: "/my_account",
     exact: true,
     element: (
       <AuthorizedRoute>
@@ -59,7 +62,7 @@ const routes = [
     ),
   },
   {
-    path: '/home',
+    path: "/home",
     exact: true,
     element: (
       <AuthorizedRoute>
@@ -68,7 +71,7 @@ const routes = [
     ),
   },
   {
-    path: '/dialog_demo',
+    path: "/dialog_demo",
     exact: true,
     element: (
       <AuthorizedRoute>
@@ -77,7 +80,7 @@ const routes = [
     ),
   },
   {
-    path: '/toast_demo',
+    path: "/toast_demo",
     exact: true,
     element: (
       <AuthorizedRoute>
@@ -86,7 +89,7 @@ const routes = [
     ),
   },
   {
-    path: '/filter_demo',
+    path: "/filter_demo",
     exact: true,
     element: (
       <AuthorizedRoute>
@@ -95,7 +98,7 @@ const routes = [
     ),
   },
   {
-    path: '/list_page_demo',
+    path: "/list_page_demo",
     exact: true,
     element: (
       <AuthorizedRoute>
@@ -104,7 +107,7 @@ const routes = [
     ),
   },
   {
-    path: '/tabs_demo',
+    path: "/tabs_demo",
     exact: true,
     element: (
       <AuthorizedRoute>
@@ -112,6 +115,15 @@ const routes = [
       </AuthorizedRoute>
     ),
   },
-]
+  {
+    path: "/thebrowformation",
+    exact: true,
+    element: (
+      <UnauthorizedRoute>
+        <LandingPage redirectTo="/home" />
+      </UnauthorizedRoute>
+    ),
+  },
+];
 
-export default routes
+export default routes;
