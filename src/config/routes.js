@@ -70,42 +70,42 @@ const routes = [
       </AuthorizedRoute>
     ),
   },
-  {
-    path: "/dialog_demo",
-    exact: true,
-    element: (
-      <AuthorizedRoute>
-        <DialogDemo />
-      </AuthorizedRoute>
-    ),
-  },
-  {
-    path: "/toast_demo",
-    exact: true,
-    element: (
-      <AuthorizedRoute>
-        <ToastDemo />
-      </AuthorizedRoute>
-    ),
-  },
-  {
-    path: "/filter_demo",
-    exact: true,
-    element: (
-      <AuthorizedRoute>
-        <FilterDemo />
-      </AuthorizedRoute>
-    ),
-  },
-  {
-    path: "/list_page_demo",
-    exact: true,
-    element: (
-      <AuthorizedRoute>
-        <ListPageDemo />
-      </AuthorizedRoute>
-    ),
-  },
+  // {
+  //   path: "/dialog_demo",
+  //   exact: true,
+  //   element: (
+  //     <AuthorizedRoute>
+  //       <DialogDemo />
+  //     </AuthorizedRoute>
+  //   ),
+  // },
+  // {
+  //   path: "/toast_demo",
+  //   exact: true,
+  //   element: (
+  //     <AuthorizedRoute>
+  //       <ToastDemo />
+  //     </AuthorizedRoute>
+  //   ),
+  // },
+  // {
+  //   path: "/filter_demo",
+  //   exact: true,
+  //   element: (
+  //     <AuthorizedRoute>
+  //       <FilterDemo />
+  //     </AuthorizedRoute>
+  //   ),
+  // },
+  // {
+  //   path: "/list_page_demo",
+  //   exact: true,
+  //   element: (
+  //     <AuthorizedRoute>
+  //       <ListPageDemo />
+  //     </AuthorizedRoute>
+  //   ),
+  // },
   {
     path: "/tabs_demo",
     exact: true,
