@@ -3,16 +3,17 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import Page from "material-ui-shell/lib/containers/Page";
 import React from "react";
 import { useIntl } from "react-intl";
+import Paper from "@mui/material/Paper";
 // import ImageList from "@mui/material/ImageList";
 // import ImageListItem from "@mui/material/ImageListItem";
 import banner from "../../assets/images/banner_logo.svg";
 import background from "../../assets/images/background1.svg";
 import AliceCarousel from "react-alice-carousel";
-import eye1 from "../../assets/images/eyes-03.svg";
-import eye2 from "../../assets/images/eyes-04.svg";
-import eye3 from "../../assets/images/eyes-05.svg";
-import eye4 from "../../assets/images/eyes-06.svg";
-import eye5 from "../../assets/images/eyes-07.svg";
+import eye1 from "../../assets/images/b4after1.jpg";
+import eye2 from "../../assets/images/b4after2.jpg";
+import eye3 from "../../assets/images/b4after3.jpg";
+import eye4 from "../../assets/images/b4after4.jpg";
+import eye5 from "../../assets/images/brows1.png";
 
 // function srcset(image, size, rows = 1, cols = 1) {
 //   return {
@@ -126,16 +127,34 @@ const HomePage = () => {
         />
       </div>
       <img src={banner} alt="logo" style={{ margin: "0 32%" }} />
+      <Paper>
+        <Typography>
+          Meet the artist. Simron is a Punjabi immigrant raised in the Bay Area.
+          She is a natural born creative with a keen eye for aesthetics of all
+          kinds, growing up spending her time drawing, painting, creating
+          digital art, & experimenting with timeless makeup looks. She is
+          inspired by old school Bollywood starlets, vintage aesthetics, and
+          traditional black and grey tattoos. Eyebrows have always been a
+          defining feature for women in her culture. With her mom threading her
+          brows for the first time in middle school, she saved her from the
+          typical over-plucked look of that time & helped her embrace her full,
+          defined brows from a young age (thank you, Mom!). As time passed and
+          trends evolved, she found herself rehabilitating her friends’ brows
+          from their tweezer-addicted ways, becoming an expert in creating the
+          perfect natural brows for any face. She became certified in Cosmetic
+          Tattooing in 2017, first specifically in Microblading, and later
+          became certified in Nano Brows in 2020.
+        </Typography>
 
-      <AliceCarousel
-        style={{ width: "100%", height: "50%" }}
-        mouseTracking
-        infinite
-        items={items}
-        responsive={responsive}
-        controlsStrategy="alternate"
-      />
-
+        <AliceCarousel
+          style={{ width: "100%", height: "50%" }}
+          mouseTracking
+          infinite
+          items={items}
+          responsive={responsive}
+          controlsStrategy="alternate"
+        />
+      </Paper>
       {/* <ImageList
         sx={{ margin: "0 32%" }}
         variant="quilted"

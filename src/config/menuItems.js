@@ -109,12 +109,12 @@ const getMenuItems = props => {
       }),
       leftIcon: <Tab />,
     },
-    // {
-    //   value: "/about",
-    //   visible: true,
-    //   primaryText: intl.formatMessage({ id: "about" }),
-    //   leftIcon: <InfoOutlined />,
-    // },
+    {
+      value: "/about",
+      visible: true,
+      primaryText: intl.formatMessage({ id: "about" }),
+      leftIcon: <InfoOutlined />,
+    },
     // {
     //   primaryText: intl.formatMessage({ id: "demos", defaultMessage: "Demos" }),
     //   primaryTogglesNestedList: true,

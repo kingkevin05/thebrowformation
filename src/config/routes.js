@@ -70,15 +70,15 @@ const routes = [
       </AuthorizedRoute>
     ),
   },
-  // {
-  //   path: "/dialog_demo",
-  //   exact: true,
-  //   element: (
-  //     <AuthorizedRoute>
-  //       <DialogDemo />
-  //     </AuthorizedRoute>
-  //   ),
-  // },
+  {
+    path: "/dialog_demo",
+    exact: true,
+    element: (
+      <AuthorizedRoute>
+        <DialogDemo />
+      </AuthorizedRoute>
+    ),
+  },
   // {
   //   path: "/toast_demo",
   //   exact: true,
