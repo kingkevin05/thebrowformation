@@ -4,6 +4,7 @@ import Page from "material-ui-shell/lib/containers/Page";
 import React from "react";
 import { useIntl } from "react-intl";
 import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
 // import ImageList from "@mui/material/ImageList";
 // import ImageListItem from "@mui/material/ImageListItem";
 import banner from "../../assets/images/banner_logo.svg";
@@ -35,19 +36,19 @@ const HomePage = () => {
 
   const items = [
     <div className="item" data-value="1">
-      <img src={eye1} alt="jpg" />
+      <img src={eye1} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
     <div className="item" data-value="2">
-      <img src={eye2} alt="jpg" />
+      <img src={eye2} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
     <div className="item" data-value="3">
-      <img src={eye3} alt="jpg" />
+      <img src={eye3} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
     <div className="item" data-value="4">
-      <img src={eye4} alt="jpg" />
+      <img src={eye4} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
     <div className="item" data-value="5">
-      <img src={eye5} alt="jpg" />
+      <img src={eye5} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
   ];
 
@@ -127,8 +128,19 @@ const HomePage = () => {
         />
       </div>
       <img src={banner} alt="logo" style={{ margin: "0 32%" }} />
-      <Paper>
-        <Typography>
+
+      <Box
+        sx={{
+          width: "75%",
+          margin: "0 0 5% 10%",
+          p: 2,
+          border: "1px dashed grey",
+          alignContent: "center",
+          backgroundColor: theme =>
+            theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+        }}
+      >
+        <Typography variant="h5" color="text.primary" gutterBottom>
           Meet the artist. Simron is a Punjabi immigrant raised in the Bay Area.
           She is a natural born creative with a keen eye for aesthetics of all
           kinds, growing up spending her time drawing, painting, creating
@@ -145,16 +157,17 @@ const HomePage = () => {
           Tattooing in 2017, first specifically in Microblading, and later
           became certified in Nano Brows in 2020.
         </Typography>
+      </Box>
 
-        <AliceCarousel
-          style={{ width: "100%", height: "50%" }}
-          mouseTracking
-          infinite
-          items={items}
-          responsive={responsive}
-          controlsStrategy="alternate"
-        />
-      </Paper>
+      <AliceCarousel
+        style={{ width: "100%", height: "50%" }}
+        mouseTracking
+        infinite
+        items={items}
+        responsive={responsive}
+        controlsStrategy="alternate"
+      />
+
       {/* <ImageList
         sx={{ margin: "0 32%" }}
         variant="quilted"

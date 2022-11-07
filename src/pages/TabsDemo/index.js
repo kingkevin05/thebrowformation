@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import { useQuestions } from "material-ui-shell/lib/providers/Dialogs/Question";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import Box from "@mui/material/Box";
 // import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
@@ -86,56 +87,38 @@ const TabsDemo = () => {
         {tab === "one" && (
           <div>
             <div>
-              <Grid sx={{ flexGrow: 1 }} container spacing={2}>
-                <Grid item xs={12}>
-                  <Grid
-                    container
-                    justifyContent="center"
-                    spacing={spacing}
-                    width="50%"
-                  >
-                    {[0].map(value => (
-                      <Grid key={value} item>
-                        <Paper
-                          sx={{
-                            height: 400,
-                            padding: 10,
-                            paddingTop: 1,
-                            // width: 100,
-                            backgroundColor: theme =>
-                              theme.palette.mode === "dark"
-                                ? "#1A2027"
-                                : "#fff",
-                          }}
-                        >
-                          <Typography variant="h4" color="text.secondary">
-                            {" "}
-                            Title of process{" "}
-                          </Typography>
-                          <Typography variant="body1" color="text.primary">
-                            {" "}
-                            This is the latest and greatest technique in the
-                            Permanent makeup world. Here a cosmetic tattoo
-                            machine is used with a single point needle. Like
-                            Micro-blading, it creates hair like strokes but
-                            looks even more natural than a Microbladed eyebrow.
-                            This lasts longer than Micoblading and shading, and
-                            fewer touch ups are needed over the years. Healed
-                            results are great on all skin types, anything from
-                            dry to oily and problematic. This is the evolution
-                            of Microblading & you will only find it available
-                            here at Washington Microblading. Artist, Jodi
-                            Muraski, was trained by a World Pro Artist, Dora
-                            Hallos from Hungary. Very Few Permanent Cosmetic
-                            Artists are trained in this technical, incredibly
-                            realistic, & high skill set.
-                          </Typography>
-                        </Paper>
-                      </Grid>
-                    ))}
-                  </Grid>
-                </Grid>
-              </Grid>
+              <Box
+                sx={{
+                  width: "75%",
+                  margin: "0 0 5% 10%",
+                  p: 2,
+                  border: "1px dashed grey",
+                  alignContent: "center",
+                  backgroundColor: theme =>
+                    theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+                }}
+              >
+                <Typography variant="h4" color="text.secondary">
+                  {" "}
+                  Microblading{" "}
+                </Typography>
+                <Typography variant="h5" color="text.primary">
+                  {" "}
+                  This is the latest and greatest technique in the Permanent
+                  makeup world. Here a cosmetic tattoo machine is used with a
+                  single point needle. Like Micro-blading, it creates hair like
+                  strokes but looks even more natural than a Microbladed
+                  eyebrow. This lasts longer than Micoblading and shading, and
+                  fewer touch ups are needed over the years. Healed results are
+                  great on all skin types, anything from dry to oily and
+                  problematic. This is the evolution of Microblading & you will
+                  only find it available here at Washington Microblading.
+                  Artist, Jodi Muraski, was trained by a World Pro Artist, Dora
+                  Hallos from Hungary. Very Few Permanent Cosmetic Artists are
+                  trained in this technical, incredibly realistic, & high skill
+                  set.
+                </Typography>
+              </Box>
             </div>
             <ImageList
               sx={{ width: "100%" }}
