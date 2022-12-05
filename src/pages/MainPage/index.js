@@ -4,14 +4,16 @@ import React, { useState } from "react";
 import { useIntl } from "react-intl";
 import { Button } from "@mui/material";
 import { useQuestions } from "material-ui-shell/lib/providers/Dialogs/Question";
-import ImageList from "@mui/material/ImageList";
+// import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import Box from "@mui/material/Box";
 // import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
+// import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-
+// import background from "../../assets/images/background1.svg";
+import AliceCarousel from "react-alice-carousel";
+import HomePage from "../Home/Home";
 // import CardActions from '@mui/material/CardActions';
 // import CardContent from "@mui/material/CardContent";
 import Face1 from "../../assets/images/faces-08.svg";
@@ -22,7 +24,7 @@ import Face5 from "../../assets/images/faces-12.svg";
 import Face6 from "../../assets/images/faces-13.svg";
 // import FacesOne from "components/FacesOne";
 
-const TabsDemo = () => {
+const MainPage = () => {
   const [tab, setTab] = useState("one");
   const intl = useIntl();
   const { openDialog, setProcessing } = useQuestions();
@@ -54,7 +56,114 @@ const TabsDemo = () => {
     },
   ];
 
-  const [spacing] = React.useState(2);
+  const responsive = {
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 3 },
+  };
+
+  const items = itemData.map(item => (
+    <ImageListItem style={{ justifySelf: "center" }} key={item.img}>
+      <Button style={{backgroundColor: "white" }}
+        onClick={() => {
+          if (item.img === Face1)
+            openDialog({
+              title: "TEST ONE",
+              message: "Dialog message. this is image one test.",
+              handleAction: handleClose => {
+                setProcessing(true);
+                console.log("Doing some async stuff");
+                setTimeout(() => {
+                  console.log("finished async stuff");
+                  //Do some stuff and then
+                  handleClose();
+                }, 3000);
+              },
+            });
+          if (item.img === Face3)
+            openDialog({
+              title: "TEST TWO",
+              message: "Dialog message. this is image two test.",
+              handleAction: handleClose => {
+                setProcessing(true);
+                console.log("Doing some async stuff");
+                setTimeout(() => {
+                  console.log("finished async stuff");
+                  //Do some stuff and then
+                  handleClose();
+                }, 3000);
+              },
+            });
+          if (item.img === Face5)
+            openDialog({
+              title: "TEST THREE",
+              message: "Dialog message. this is image three test.",
+              handleAction: handleClose => {
+                setProcessing(true);
+                console.log("Doing some async stuff");
+                setTimeout(() => {
+                  console.log("finished async stuff");
+                  //Do some stuff and then
+                  handleClose();
+                }, 3000);
+              },
+            });
+          if (item.img === Face2)
+            openDialog({
+              title: "TEST FOUR",
+              message: "Dialog message. this is image four test.",
+              handleAction: handleClose => {
+                setProcessing(true);
+                console.log("Doing some async stuff");
+                setTimeout(() => {
+                  console.log("finished async stuff");
+                  //Do some stuff and then
+                  handleClose();
+                }, 3000);
+              },
+            });
+          if (item.img === Face4)
+            openDialog({
+              title: "TEST FIVE",
+              message: "Dialog message. this is image five test.",
+              handleAction: handleClose => {
+                setProcessing(true);
+                console.log("Doing some async stuff");
+                setTimeout(() => {
+                  console.log("finished async stuff");
+                  //Do some stuff and then
+                  handleClose();
+                }, 3000);
+              },
+            });
+          if (item.img === Face6)
+            openDialog({
+              title: "TEST SIX",
+              message: "Dialog message. this is image six test.",
+              handleAction: handleClose => {
+                setProcessing(true);
+                console.log("Doing some async stuff");
+                setTimeout(() => {
+                  console.log("finished async stuff");
+                  //Do some stuff and then
+                  handleClose();
+                }, 3000);
+              },
+            });
+        }}
+      >
+        <img
+          src={`${item.img}?w=161&fit=crop&auto=format`}
+          srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
+          style={{ width: "100%" }}
+          alt={item.title}
+          loading="lazy"
+        />
+      </Button>
+    </ImageListItem>
+  ));
+
+  // const [spacing] = React.useState(2);
 
   //   const jsx = `
   // <Grid container spacing={${spacing}}>
@@ -63,9 +172,10 @@ const TabsDemo = () => {
   return (
     <Page
       pageTitle={intl.formatMessage({
-        id: "tabs_demo",
-        defaultMessage: "Tabs demo",
+        id: "main_page",
+        defaultMessage: "The Browformation",
       })}
+      
       tabs={
         <AppBar position="static">
           <Tabs
@@ -76,15 +186,30 @@ const TabsDemo = () => {
             textColor="inherit"
             indicatorColor="secondary"
           >
-            <Tab label="the process" value="one" />
-            <Tab label="FAQs" value="two" />
-            <Tab label="BOOK NOW" value="three" />
+            <Tab label="Home" value="one" />
+            <Tab label="The Process" value="two" />
+            <Tab label="FAQs" value="three" />
+            <Tab label="BOOK NOW" value="four" />
           </Tabs>
         </AppBar>
       }
     >
       <div>
-        {tab === "one" && (
+        {/* <img
+          src={background}
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "fixed",
+            zIndex: -1,
+          }}
+          alt="cover"
+        /> */}
+      </div>
+      <div>
+        {tab === "one" && (<div><HomePage /></div>)}
+
+        {tab === "two" && (
           <div>
             <div>
               <Box
@@ -92,7 +217,7 @@ const TabsDemo = () => {
                   width: "75%",
                   margin: "0 0 5% 10%",
                   p: 2,
-                  border: "1px dashed grey",
+                  // border: "1px dashed grey",
                   alignContent: "center",
                   backgroundColor: theme =>
                     theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -120,117 +245,20 @@ const TabsDemo = () => {
                 </Typography>
               </Box>
             </div>
-            <ImageList
-              sx={{ width: "100%" }}
-              style={{ overflow: "unset" }}
-              // variant="woven"
-              cols={3}
-              gap={8}
-            >
-              {itemData.map(item => (
-                <ImageListItem style={{ justifySelf: "center" }} key={item.img}>
-                  <Button
-                    onClick={() => {
-                      if (item.img === Face1)
-                        openDialog({
-                          title: "TEST ONE",
-                          message: "Dialog message. this is image one test.",
-                          handleAction: handleClose => {
-                            setProcessing(true);
-                            console.log("Doing some async stuff");
-                            setTimeout(() => {
-                              console.log("finished async stuff");
-                              //Do some stuff and then
-                              handleClose();
-                            }, 3000);
-                          },
-                        });
-                      if (item.img === Face3)
-                        openDialog({
-                          title: "TEST TWO",
-                          message: "Dialog message. this is image two test.",
-                          handleAction: handleClose => {
-                            setProcessing(true);
-                            console.log("Doing some async stuff");
-                            setTimeout(() => {
-                              console.log("finished async stuff");
-                              //Do some stuff and then
-                              handleClose();
-                            }, 3000);
-                          },
-                        });
-                      if (item.img === Face5)
-                        openDialog({
-                          title: "TEST THREE",
-                          message: "Dialog message. this is image three test.",
-                          handleAction: handleClose => {
-                            setProcessing(true);
-                            console.log("Doing some async stuff");
-                            setTimeout(() => {
-                              console.log("finished async stuff");
-                              //Do some stuff and then
-                              handleClose();
-                            }, 3000);
-                          },
-                        });
-                      if (item.img === Face2)
-                        openDialog({
-                          title: "TEST FOUR",
-                          message: "Dialog message. this is image four test.",
-                          handleAction: handleClose => {
-                            setProcessing(true);
-                            console.log("Doing some async stuff");
-                            setTimeout(() => {
-                              console.log("finished async stuff");
-                              //Do some stuff and then
-                              handleClose();
-                            }, 3000);
-                          },
-                        });
-                      if (item.img === Face4)
-                        openDialog({
-                          title: "TEST FIVE",
-                          message: "Dialog message. this is image five test.",
-                          handleAction: handleClose => {
-                            setProcessing(true);
-                            console.log("Doing some async stuff");
-                            setTimeout(() => {
-                              console.log("finished async stuff");
-                              //Do some stuff and then
-                              handleClose();
-                            }, 3000);
-                          },
-                        });
-                      if (item.img === Face6)
-                        openDialog({
-                          title: "TEST SIX",
-                          message: "Dialog message. this is image six test.",
-                          handleAction: handleClose => {
-                            setProcessing(true);
-                            console.log("Doing some async stuff");
-                            setTimeout(() => {
-                              console.log("finished async stuff");
-                              //Do some stuff and then
-                              handleClose();
-                            }, 3000);
-                          },
-                        });
-                    }}
-                  >
-                    <img
-                      src={`${item.img}?w=161&fit=crop&auto=format`}
-                      srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
-                      style={{ width: "100%" }}
-                      alt={item.title}
-                      loading="lazy"
-                    />
-                  </Button>
-                </ImageListItem>
-              ))}
-            </ImageList>
+            <div style={{ textAlign: "center"}}>
+            <AliceCarousel
+              style={{ width: "100%", height: "50%" }}
+              mouseTracking
+              infinite
+              items={items}
+              responsive={responsive}
+              controlsStrategy="alternate"
+              disableButtonsControls={true}
+            ></AliceCarousel>
+            </div>
           </div>
         )}
-        {tab === "two" && (
+        {tab === "three" && (
           <div>
             <Paper
               sx={{
@@ -418,9 +446,10 @@ const TabsDemo = () => {
             </Paper>
           </div>
         )}
-        {tab === "three" && <div>BOOK NOW</div>}
+        {tab === "four" && (<div>BOOK NOW</div>)}
+        
       </div>
     </Page>
   );
 };
-export default TabsDemo;
+export default MainPage;

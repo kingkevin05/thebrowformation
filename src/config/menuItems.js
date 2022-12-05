@@ -1,28 +1,28 @@
 import React from "react";
 import {
   AccountBox as AccountBoxIcon,
-  ChatBubble,
+  // ChatBubble,
   ChromeReaderMode,
   Dashboard as DashboardIcon,
   ExitToApp as ExitToAppIcon,
-  FilterList,
-  FormatTextdirectionRToL as RTLIcon,
-  FormatTextdirectionLToR as LTRIcon,
+  // FilterList,
+  // FormatTextdirectionRToL as RTLIcon,
+  // FormatTextdirectionLToR as LTRIcon,
   GetApp,
-  InfoOutlined,
+  // InfoOutlined,
   Language as LanguageIcon,
   Lock as LockIcon,
   MenuOpen as MenuOpenIcon,
-  QuestionAnswer,
+  // QuestionAnswer,
   SettingsApplications as SettingsIcon,
-  Style as StyleIcon,
-  Tab,
-  ViewList,
-  Web,
+  // Style as StyleIcon,
+  // Tab,
+  // ViewList,
+  // Web,
 } from "@mui/icons-material";
 
 import allLocales from "./locales";
-import allThemes from "./themes";
+// import allThemes from "./themes";
 
 const getMenuItems = props => {
   const {
@@ -30,14 +30,14 @@ const getMenuItems = props => {
     updateLocale,
     locale,
     menuContext,
-    themeContext,
+    // themeContext,
     a2HSContext,
     auth: authData,
   } = props;
 
   const { toggleThis, isDesktop, isAuthMenuOpen, isMiniSwitchVisibility } =
     menuContext;
-  const { themeID, setThemeID, isRTL, toggleThisTheme } = themeContext;
+  // const { themeID, setThemeID, isRTL, toggleThisTheme } = themeContext;
 
   const { auth, setAuth } = authData;
   const { isAppInstallable, isAppInstalled, deferredPrompt } = a2HSContext;
@@ -56,17 +56,17 @@ const getMenuItems = props => {
 
   const isAuthorised = auth.isAuthenticated;
 
-  const themeItems = allThemes.map(t => {
-    return {
-      value: undefined,
-      visible: true,
-      primaryText: intl.formatMessage({ id: t.id }),
-      onClick: () => {
-        setThemeID(t.id);
-      },
-      leftIcon: <StyleIcon style={{ color: t.color }} />,
-    };
-  });
+  // const themeItems = allThemes.map(t => {
+  //   return {
+  //     value: undefined,
+  //     visible: true,
+  //     primaryText: intl.formatMessage({ id: t.id }),
+  //     onClick: () => {
+  //       setThemeID(t.id);
+  //     },
+  //     leftIcon: <StyleIcon style={{ color: t.color }} />,
+  //   };
+  // });
 
   if (isAuthMenuOpen || !isAuthorised) {
     return [
@@ -100,21 +100,21 @@ const getMenuItems = props => {
       primaryText: intl.formatMessage({ id: "home" }),
       leftIcon: <DashboardIcon />,
     },
-    {
-      value: "/tabs_demo",
-      visible: isAuthorised,
-      primaryText: intl.formatMessage({
-        id: "tabs_demo",
-        defaultMessage: "Get Started",
-      }),
-      leftIcon: <Tab />,
-    },
-    {
-      value: "/about",
-      visible: true,
-      primaryText: intl.formatMessage({ id: "about" }),
-      leftIcon: <InfoOutlined />,
-    },
+    // {
+    //   value: "/tabs_demo",
+    //   visible: isAuthorised,
+    //   primaryText: intl.formatMessage({
+    //     id: "tabs_demo",
+    //     defaultMessage: "Get Started",
+    //   }),
+    //   leftIcon: <Tab />,
+    // },
+    // {
+    //   value: "/about",
+    //   visible: true,
+    //   primaryText: intl.formatMessage({ id: "about" }),
+    //   leftIcon: <InfoOutlined />,
+    // },
     // {
     //   primaryText: intl.formatMessage({ id: "demos", defaultMessage: "Demos" }),
     //   primaryTogglesNestedList: true,
@@ -165,13 +165,13 @@ const getMenuItems = props => {
       primaryTogglesNestedList: true,
       leftIcon: <SettingsIcon />,
       nestedItems: [
-        {
-          primaryText: intl.formatMessage({ id: "theme" }),
-          secondaryText: intl.formatMessage({ id: themeID }),
-          primaryTogglesNestedList: true,
-          leftIcon: <StyleIcon />,
-          nestedItems: themeItems,
-        },
+        // {
+        //   primaryText: intl.formatMessage({ id: "theme" }),
+        //   secondaryText: intl.formatMessage({ id: themeID }),
+        //   primaryTogglesNestedList: true,
+        //   leftIcon: <StyleIcon />,
+        //   nestedItems: themeItems,
+        // },
         {
           primaryText: intl.formatMessage({ id: "language" }),
           secondaryText: intl.formatMessage({ id: locale }),
@@ -193,13 +193,13 @@ const getMenuItems = props => {
             <ChromeReaderMode />
           ),
         },
-        {
-          onClick: () => {
-            toggleThisTheme("isRTL");
-          },
-          primaryText: `${isRTL ? "LTR" : "RTL"} mode`,
-          leftIcon: isRTL ? <LTRIcon /> : <RTLIcon />,
-        },
+        // {
+        //   onClick: () => {
+        //     toggleThisTheme("isRTL");
+        //   },
+        //   primaryText: `${isRTL ? "LTR" : "RTL"} mode`,
+        //   leftIcon: isRTL ? <LTRIcon /> : <RTLIcon />,
+        // },
       ],
     },
     {

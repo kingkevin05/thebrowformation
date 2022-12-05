@@ -11,12 +11,12 @@ const PasswordReset = lazy(() =>
   import("../pages/PasswordReset/PasswordReset")
 );
 const About = lazy(() => import("../pages/About"));
-const Home = lazy(() => import("../pages/Home/Home"));
+// const Home = lazy(() => import("../pages/Home/Home"));
 const DialogDemo = lazy(() => import("../pages/DialogDemo/DialogDemo"));
-const ToastDemo = lazy(() => import("../pages/ToastDemo/ToastDemo"));
-const FilterDemo = lazy(() => import("../pages/FilterDemo"));
-const ListPageDemo = lazy(() => import("../pages/ListPageDemo"));
-const TabsDemo = lazy(() => import("../pages/TabsDemo"));
+// const ToastDemo = lazy(() => import("../pages/ToastDemo/ToastDemo"));
+// const FilterDemo = lazy(() => import("../pages/FilterDemo"));
+// const ListPageDemo = lazy(() => import("../pages/ListPageDemo"));
+const MainPage = lazy(() => import("../pages/MainPage"));
 const MyAccount = lazy(() => import("../pages/MyAccount/MyAccount"));
 
 const routes = [
@@ -61,15 +61,15 @@ const routes = [
       </AuthorizedRoute>
     ),
   },
-  {
-    path: "/home",
-    exact: true,
-    element: (
-      <AuthorizedRoute>
-        <Home />
-      </AuthorizedRoute>
-    ),
-  },
+  // {
+  //   path: "/home",
+  //   exact: true,
+  //   element: (
+  //     <AuthorizedRoute>
+  //       <Home />
+  //     </AuthorizedRoute>
+  //   ),
+  // },
   {
     path: "/dialog_demo",
     exact: true,
@@ -107,11 +107,11 @@ const routes = [
   //   ),
   // },
   {
-    path: "/tabs_demo",
+    path: "/home",
     exact: true,
     element: (
       <AuthorizedRoute>
-        <TabsDemo />
+        <MainPage />
       </AuthorizedRoute>
     ),
   },

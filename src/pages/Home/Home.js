@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import "react-alice-carousel/lib/alice-carousel.css";
-import Page from "material-ui-shell/lib/containers/Page";
+// import Page from "material-ui-shell/lib/containers/Page";
 import React from "react";
-import { useIntl } from "react-intl";
-import Paper from "@mui/material/Paper";
+// import { useIntl } from "react-intl";
+// import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 // import ImageList from "@mui/material/ImageList";
 // import ImageListItem from "@mui/material/ImageListItem";
@@ -26,7 +26,7 @@ import eye5 from "../../assets/images/brows1.png";
 // }
 
 const HomePage = () => {
-  const intl = useIntl();
+  // const intl = useIntl();
 
   const responsive = {
     0: { items: 1 },
@@ -114,7 +114,8 @@ const HomePage = () => {
   // ];
 
   return (
-    <Page pageTitle={intl.formatMessage({ id: "home" })}>
+    
+      <div>
       <div>
         <img
           src={background}
@@ -134,7 +135,7 @@ const HomePage = () => {
           width: "75%",
           margin: "0 0 5% 10%",
           p: 2,
-          border: "1px dashed grey",
+          // border: "1px dashed grey",
           alignContent: "center",
           backgroundColor: theme =>
             theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -166,6 +167,7 @@ const HomePage = () => {
         items={items}
         responsive={responsive}
         controlsStrategy="alternate"
+        disableButtonsControls= {true}
       />
 
       {/* <ImageList
@@ -188,7 +190,7 @@ const HomePage = () => {
           </ImageListItem>
         ))}
       </ImageList> */}
-    </Page>
+    </div>
   );
 };
 export default HomePage;
