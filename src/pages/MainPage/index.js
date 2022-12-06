@@ -253,7 +253,7 @@ const MainPage = () => {
               items={items}
               responsive={responsive}
               controlsStrategy="alternate"
-              disableButtonsControls={true}
+              // disableButtonsControls={true}
             ></AliceCarousel>
             </div>
           </div>

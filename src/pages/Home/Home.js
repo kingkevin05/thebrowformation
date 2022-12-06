@@ -131,14 +131,17 @@ const HomePage = () => {
       <img src={banner} alt="logo" style={{ margin: "0 32%" }} />
 
       <Box
+      style={{ textAlign: "center"}}
+
         sx={{
+          
           width: "75%",
           margin: "0 0 5% 10%",
           p: 2,
           // border: "1px dashed grey",
           alignContent: "center",
-          backgroundColor: theme =>
-            theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+          // backgroundColor: theme =>
+          //   theme.palette.mode === "dark" ? "#1A2027" : "#fff",
         }}
       >
         <Typography variant="h5" color="text.primary" gutterBottom>
@@ -167,7 +170,7 @@ const HomePage = () => {
         items={items}
         responsive={responsive}
         controlsStrategy="alternate"
-        disableButtonsControls= {true}
+        // disableButtonsControls= {true}
       />
 
       {/* <ImageList
