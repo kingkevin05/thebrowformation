@@ -35,19 +35,19 @@ const HomePage = () => {
   };
 
   const items = [
-    <div className="item" data-value="1">
+    <div className="item" data-value="1" style={{ textAlign: "center" }}>
       <img src={eye1} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
-    <div className="item" data-value="2">
+    <div className="item" data-value="2" style={{ textAlign: "center" }}>
       <img src={eye2} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
-    <div className="item" data-value="3">
+    <div className="item" data-value="3" style={{ textAlign: "center" }}>
       <img src={eye3} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
-    <div className="item" data-value="4">
+    <div className="item" data-value="4" style={{ textAlign: "center" }}>
       <img src={eye4} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
-    <div className="item" data-value="5">
+    <div className="item" data-value="5" style={{ textAlign: "center" }}>
       <img src={eye5} width="75%" style={{ borderRadius: "50%" }} alt="jpg" />
     </div>,
   ];
@@ -164,7 +164,7 @@ const HomePage = () => {
       </Box>
 
       <AliceCarousel
-        style={{ width: "100%", height: "50%" }}
+        style={{ width: "100%", height: "30%"}}
         mouseTracking
         infinite
         items={items}

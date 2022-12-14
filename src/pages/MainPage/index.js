@@ -60,11 +60,14 @@ const MainPage = () => {
     0: { items: 1 },
     568: { items: 2 },
     1024: { items: 3 },
+    1025: { items: 4 },
+    1026: { items: 5 },
   };
 
   const items = itemData.map(item => (
     <ImageListItem style={{ justifySelf: "center" }} key={item.img}>
-      <Button style={{backgroundColor: "white" }}
+      <Button
+        style={{ backgroundColor: "white" }}
         onClick={() => {
           if (item.img === Face1)
             openDialog({
@@ -175,7 +178,6 @@ const MainPage = () => {
         id: "main_page",
         defaultMessage: "The Browformation",
       })}
-      
       tabs={
         <AppBar position="static">
           <Tabs
@@ -207,7 +209,11 @@ const MainPage = () => {
         /> */}
       </div>
       <div>
-        {tab === "one" && (<div><HomePage /></div>)}
+        {tab === "one" && (
+          <div>
+            <HomePage />
+          </div>
+        )}
 
         {tab === "two" && (
           <div>
@@ -245,18 +251,22 @@ const MainPage = () => {
                 </Typography>
               </Box>
             </div>
-            <div style={{ textAlign: "center"}}>
+            {/* <div style={{ textAlign: "center"}}> */}
+
             <AliceCarousel
               style={{ width: "100%", height: "50%" }}
               mouseTracking
+              disableDotsControls
+              // disableButtonsControls
               infinite
               items={items}
+              // itemsFit="contain"
               responsive={responsive}
-              controlsStrategy="alternate"
+              controlsStrategy="default"
               // disableButtonsControls={true}
-            ></AliceCarousel>
-            </div>
+            />
           </div>
+          // </div>
         )}
         {tab === "three" && (
           <div>
@@ -446,8 +456,7 @@ const MainPage = () => {
             </Paper>
           </div>
         )}
-        {tab === "four" && (<div>BOOK NOW</div>)}
-        
+        {tab === "four" && <div>BOOK NOW</div>}
       </div>
     </Page>
   );
