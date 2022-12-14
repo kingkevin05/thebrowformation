@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkthebrowformation=self.webpackChunkthebrowformation||[]).push([[370],{7370:function(e,t,c){c(2791);t.Z=c.p+"static/media/background1.39ff87e363e4870ce0f2e1339b7801c0.svg"}}]);
+//# sourceMappingURL=370.8b76c206.chunk.js.map
